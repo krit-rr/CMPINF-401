@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="633.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxmlprojectpackage.FXMLGUIController">
+   <children>
+      <GridPane layoutX="10.0" layoutY="10.0" prefWidth="579.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="151.60001220703126" minWidth="137.9999755859375" prefWidth="138.8000244140625" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints prefHeight="59.733332824707034" vgrow="NEVER" />
+            <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" vgrow="NEVER" />
+          <RowConstraints vgrow="NEVER" />
+            <RowConstraints vgrow="NEVER" />
+            <RowConstraints vgrow="ALWAYS" />
+            <RowConstraints vgrow="ALWAYS" />
+            <RowConstraints vgrow="ALWAYS" />
+            <RowConstraints vgrow="ALWAYS" />
+            <RowConstraints vgrow="ALWAYS" />
+            <RowConstraints vgrow="ALWAYS" />
+            <RowConstraints vgrow="ALWAYS" />
+            <RowConstraints vgrow="ALWAYS" />
+            <RowConstraints maxHeight="261.06666412353513" minHeight="10.0" prefHeight="256.3333374023438" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="261.06666412353513" minHeight="10.0" prefHeight="256.3333374023438" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="261.06666412353513" minHeight="10.0" prefHeight="256.3333374023438" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="261.06666412353513" minHeight="10.0" prefHeight="256.3333374023438" valignment="CENTER" vgrow="ALWAYS" />
+        </rowConstraints>
+         <children>
+            <ImageView fitHeight="69.0" fitWidth="145.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Downloads/resources/resources/images/logo.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" text="Car Dealership" textAlignment="CENTER" GridPane.columnIndex="2">
+               <font>
+                  <Font name="Arial Black" size="31.0" />
+               </font>
+            </Label>
+            <Label text="Model" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Label>
+            <Label text="Color" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Label>
+            <Label text="Options" GridPane.rowIndex="8">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Label>
+            <VBox prefWidth="100.0" GridPane.rowIndex="9">
+               <children>
+                  <CheckBox fx:id="powerLocks" mnemonicParsing="false" onAction="#updateSelection" text="Power Locks" />
+                  <CheckBox fx:id="powerWindows" mnemonicParsing="false" onAction="#updateSelection" text="Power Windows" />
+                  <CheckBox fx:id="airConditioner" mnemonicParsing="false" onAction="#updateSelection" text="Air Conditioner" />
+               </children>
+            </VBox>
+            <Label text="Insurance Policy" GridPane.rowIndex="10">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Label>
+            <VBox GridPane.rowIndex="11">
+               <children>
+                  <RadioButton fx:id="insuranceThree" mnemonicParsing="false" onAction="#updateSelection" selected="true" text="3-Year">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="toggleInsurance" />
+                     </toggleGroup></RadioButton>
+                  <RadioButton fx:id="insuranceOne" mnemonicParsing="false" onAction="#updateSelection" selected="true" text="1-Year" toggleGroup="$toggleInsurance" />
+                  <RadioButton fx:id="insuranceNone" mnemonicParsing="false" onAction="#updateSelection" selected="true" text="None" toggleGroup="$toggleInsurance" />
+               </children>
+            </VBox>
+            <BorderPane prefWidth="305.0" style="-fx-background-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.rowSpan="8">
+               <center>
+                  <ImageView fx:id="imageCar" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+               </center>
+            </BorderPane>
+            <Label text="Total Price" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="textDescription" editable="false" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: transparent;" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="11" GridPane.rowSpan="5" />
+            <Label fx:id="textPrice" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Label>
+            <Button fx:id="buttonExit" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#exitApplication" prefHeight="23.0" prefWidth="74.0" text="Exit Application" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="15" GridPane.valignment="TOP">
+               <font>
+                  <Font name="Arial" size="9.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets top="4.0" />
+               </GridPane.margin>
+            </Button>
+            <ChoiceBox fx:id="choiceModel" prefWidth="150.0" GridPane.rowIndex="3" />
+            <ChoiceBox fx:id="choiceColor" prefWidth="150.0" GridPane.rowIndex="5" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
